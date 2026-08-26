@@ -35,6 +35,7 @@ public class CustomerService {
         return customerRepository.findById(id)
                 .map(existingCustomer -> {
                     existingCustomer.setName(updatedCustomer.getName());
+                    existingCustomer.setEmail(updatedCustomer.getEmail());
                     return customerRepository.save(existingCustomer);
                 });
     }
