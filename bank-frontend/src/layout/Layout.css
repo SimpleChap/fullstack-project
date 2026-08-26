@@ -1,0 +1,203 @@
+.site-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f7f9f7;
+}
+
+.site-header {
+  width: min(1100px, calc(100% - 3rem));
+  margin: 0 auto;
+  padding: 1rem 1.25rem;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  border: 1px solid #e2ebe5;
+  border-top: 0;
+  border-radius: 0 0 10px 10px;
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 4px 14px rgba(23, 59, 50, 0.04);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: #173b32;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.brand-mark {
+  width: 1.9rem;
+  height: 1.9rem;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+  background: #173b32;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.05rem;
+  font-style: italic;
+}
+
+.site-header nav {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-left: auto;
+}
+
+.nav-link {
+  position: relative;
+  color: #52645d;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #c75c32;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: -0.45rem;
+  left: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: #c75c32;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.sign-in-button,
+.account-button {
+  padding: 0.55rem 0.85rem;
+  border: 1px solid #c9d8d0;
+  border-radius: 7px;
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 160ms ease, background-color 160ms ease, color 160ms ease;
+}
+
+.sign-in-button {
+  color: #173b32;
+  background: transparent;
+}
+
+.account-button {
+  border-color: #173b32;
+  color: #fff;
+  background: #173b32;
+}
+
+.sign-in-button:hover,
+.account-button:hover {
+  transform: translateY(-1px);
+}
+
+.sign-in-button:hover {
+  background: #e8f0eb;
+}
+
+.account-button:hover {
+  background: #245649;
+}
+
+.sign-in-button:focus-visible,
+.account-button:focus-visible,
+.nav-link:focus-visible,
+.brand:focus-visible {
+  outline: 2px solid #c75c32;
+  outline-offset: 3px;
+}
+
+.site-main {
+  flex: 1;
+}
+
+.site-footer {
+  width: min(1100px, calc(100% - 3rem));
+  margin: 0 auto;
+  padding: 1.5rem 0;
+  border-top: 1px solid #dce5df;
+  color: #6c7b75;
+  font-size: 0.8rem;
+  letter-spacing: 0.01em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.footer-brand,
+.footer-details {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.footer-brand strong {
+  color: #173b32;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1rem;
+}
+
+.footer-brand p,
+.footer-details p {
+  margin: 0;
+}
+
+.footer-details {
+  gap: 1.25rem;
+}
+
+@media (max-width: 640px) {
+  .site-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .site-header nav {
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
+    margin-left: 0;
+  }
+
+  .header-actions {
+    width: 100%;
+  }
+
+  .sign-in-button,
+  .account-button {
+    flex: 1;
+  }
+
+  .site-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .footer-details {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+}
