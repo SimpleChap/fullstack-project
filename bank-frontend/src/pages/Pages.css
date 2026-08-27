@@ -337,6 +337,29 @@
   gap: 0.35rem;
 }
 
+.token-panel {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.token-panel span {
+  color: #6c7b75;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.session-token {
+  padding: 0.75rem;
+  overflow-wrap: anywhere;
+  border-radius: 6px;
+  color: #173b32;
+  background: #f7f9f7;
+  font-family: Consolas, monospace;
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
 .account-card span,
 .account-card small {
   color: #6c7b75;

@@ -8,14 +8,25 @@ function SignIn() {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault()
+
+    if (!username.trim() || !password) {
+      setError('Username and password are required.')
+      return
+    }
+
+    setError('')
+    setIsSubmitting(true)
     try {
-      const session = login(username, password)
-      navigate(session.role === 'Admin' ? '/admin-dashboard' : '/customer-dashboard')
+      const session = await login(username, password)
+      navigate(session.role === 'ADMIN' ? '/admin-dashboard' : '/customer-dashboard')
     } catch (loginError) {
       setError(loginError.message)
+    } finally {
+      setIsSubmitting(false)
     }
   }
 
@@ -31,7 +42,9 @@ function SignIn() {
           <label htmlFor="password">Password</label>
           <input id="password" type="password" value={password} onChange={(event) => setPassword(event.target.value)} autoComplete="current-password" />
           {error && <p className="form-error" role="alert">{error}</p>}
-          <button className="form-button" type="submit">Sign in</button>
+          <button className="form-button" type="submit" disabled={isSubmitting}>
+            {isSubmitting ? 'Signing in...' : 'Sign in'}
+          </button>
         </form>
         <p className="auth-switch">New to M bank? <Link to="/create-account">Create an account</Link></p>
       </div>

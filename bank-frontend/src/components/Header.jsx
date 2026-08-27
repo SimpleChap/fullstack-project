@@ -50,8 +50,8 @@ function Header() {
       <div className="header-actions">
         {session ? (
           <>
-            <span className="session-label">{session.username} · {session.role}</span>
-            <Link className="account-button" to={session.role === 'Admin' ? '/admin-dashboard' : '/customer-dashboard'}>
+            <span className="session-label">{session.username} · {session.role === 'ADMIN' ? 'Admin' : 'Customer'}</span>
+            <Link className="account-button" to={session.role === 'ADMIN' ? '/admin-dashboard' : '/customer-dashboard'}>
               Dashboard
             </Link>
             <button className="sign-in-button" type="button" onClick={handleLogout}>Log out</button>

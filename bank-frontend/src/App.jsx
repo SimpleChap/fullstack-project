@@ -18,7 +18,7 @@ function ProtectedRoute({ role, children }) {
   }
 
   if (role && session.role !== role) {
-    return <Navigate to={session.role === 'Admin' ? '/admin-dashboard' : '/customer-dashboard'} replace />
+    return <Navigate to={session.role === 'ADMIN' ? '/admin-dashboard' : '/customer-dashboard'} replace />
   }
 
   return children
@@ -35,8 +35,8 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/create-account" element={<CreateAccount />} />
-          <Route path="/customer-dashboard" element={<ProtectedRoute role="Customer"><CustomerDashboard /></ProtectedRoute>} />
-          <Route path="/admin-dashboard" element={<ProtectedRoute role="Admin"><AdminDashboard /></ProtectedRoute>} />
+          <Route path="/customer-dashboard" element={<ProtectedRoute role="CUSTOMER"><CustomerDashboard /></ProtectedRoute>} />
+          <Route path="/admin-dashboard" element={<ProtectedRoute role="ADMIN"><AdminDashboard /></ProtectedRoute>} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>
