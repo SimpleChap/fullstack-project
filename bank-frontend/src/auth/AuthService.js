@@ -1,4 +1,6 @@
-const AUTH_BASE_URL = '/api/v1/auth'
+import { API_BASE_URL } from '../config/api'
+
+const AUTH_BASE_URL = `${API_BASE_URL}/api/v1/auth`
 const SESSION_KEY = 'mBankSession'
 
 export function getSession() {

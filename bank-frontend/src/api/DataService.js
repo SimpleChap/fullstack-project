@@ -1,4 +1,6 @@
-const CUSTOMERS_URL = '/api/v1/customers'
+import { API_BASE_URL } from '../config/api'
+
+const CUSTOMERS_URL = `${API_BASE_URL}/api/v1/customers`
 
 export async function getCustomers() {
   const response = await fetch(CUSTOMERS_URL)

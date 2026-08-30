@@ -10,7 +10,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = {
+    "http://localhost:5173",
+    "http://mbank-frontend-mit-patel.s3-website-us-east-1.amazonaws.com"
+})
 @RestController
 @RequestMapping("/api/v1/auth")
 public class AuthController {

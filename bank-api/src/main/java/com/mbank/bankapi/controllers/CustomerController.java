@@ -9,7 +9,10 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = {
+    "http://localhost:5173",
+    "http://mbank-frontend-mit-patel.s3-website-us-east-1.amazonaws.com"
+})
 @RestController
 @RequestMapping("/api/v1/customers")
 public class CustomerController {
